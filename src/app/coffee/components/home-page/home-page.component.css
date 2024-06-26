@@ -1,0 +1,99 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url('https://img.freepik.com/free-photo/background-roasted-fresh-brown-coffee-beans-perfect-cool-wallpaper_181624-9592.jpg?t=st=1719418829~exp=1719422429~hmac=3d94e4390f694c03c41a95b9fabb8306190b0414c37fc31dec99e9afcccac610&w=900') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content {
+  margin-left: 2rem;
+  max-width: 60rem;
+  color: white;
+  margin: 80px;
+  font-family: 'Roboto';
+}
+
+.home .content h3 {
+  font-size: 6.2rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.home .content p {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  line-height: 1.8;
+  margin-bottom: 20px;
+
+}
+
+.home .content button {
+  background-color: #C29C6B;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-transform: capitalize;
+  width: 200px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .home {
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .home .content h3 {
+    font-size: 4.5rem;
+  }
+
+  .home .content p {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .home .content h3 {
+    font-size: 1.5rem;
+  }
+
+  .home .content p {
+    font-size: 0.4rem;
+  }
+}
+
+.btn:hover {
+  -webkit-animation: btn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: btn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes btn {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes btn {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}

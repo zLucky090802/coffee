@@ -1,0 +1,51 @@
+
+
+<div class="cards">
+   
+  
+  <div class="title">
+    hot coffee
+  </div>
+  
+  
+  <div class="products">
+
+    <div *ngFor="let coffeeProduct of coffeeProducts" >
+      <card-coffee
+        *ngIf="coffeeProduct.image.includes('http')"
+        [coffeeProduct]="coffeeProduct"
+      ></card-coffee>
+    </div>
+  </div>
+
+  <div class="title">
+    iced coffee
+  </div>
+  
+  
+  <div class="products">
+
+    <div *ngFor="let coffeeProduct of coffeeProductsIced" >
+      <card-coffee
+        *ngIf="coffeeProduct.image.includes('http')"
+        [coffeeProduct]="coffeeProduct"
+      ></card-coffee>
+    </div>
+  </div>
+  
+  
+ <div class="title">
+  COFFEE BEAN
+ </div>
+
+  <div class="products">
+
+    <div *ngFor="let coffeeBean of coffeeBeans" >
+      <card-coffee
+        
+        [coffeeBeans]="coffeeBean"
+      ></card-coffee>
+    </div>
+  </div> 
+
+</div>

@@ -1,0 +1,28 @@
+
+<div class="">
+  <form [formGroup]="myFormGroup" autocomplete="off" (ngSubmit)="onSignIn()" class="form">
+    <div class="header">
+  
+      <h1>Sign In</h1>
+      <p>to continue your purchase</p>
+    </div>
+
+    <input type="text" placeholder="user" formControlName="user">
+    <div *ngIf="myFormGroup.get('user')!.errors && myFormGroup.get('user')!.dirty" class="error-container">
+      <div *ngIf="myFormGroup.get('user')!.hasError('required')" class="error">Invalid user</div>
+      
+    </div>
+
+    <input type="password" placeholder="password" formControlName="password">
+    <div *ngIf="myFormGroup.get('password')!.errors && myFormGroup.get('password')!.dirty" class="error-container">
+      <div *ngIf="myFormGroup.get('password')!.hasError('required')" class="error">Invalid password</div>
+      
+    </div>
+    
+    <button type="submit" routerLink="payment">Sign in</button>
+    <div class="footer">
+  
+      <p>No account?<a routerLink="/auth/new-account">Create One!</a></p>
+    </div>
+  </form>
+</div>

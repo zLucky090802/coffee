@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "user": "John Doe",
+      "email": "john.due@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "69c5f2b2-25d9-4b50-8daf-21ff489516d8",
+      "user": "Daniel",
+      "email": "d.espitia15@gmail.com",
+      "password": "$2a$10$cr801lBBWp9NzbVrrWNGgOVkuykSO5rIjIgtFjPtbz.j23p8yzXkW"
+    },
+    {
+      "id": "7c081ac1-0830-4a09-8fc1-2edf24b07489",
+      "user": "Daniel",
+      "email": "canalesdeyt12@gmail.com",
+      "password": "$2a$10$zwJMVh7UM.N6.N.zjKbZD.sw.C8HwfR/krlN8qTpqLLnIoht3xuFa",
+      "roll": "user"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<div class="nav-bar">
+ <img  routerLink="list" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf30HykMvzFch67oi2WHS_SBzgJBTEuaJ17g&s" class="nav-left" alt="logo">
+
+  <div class="container">
+    <div class="">
+      <label class="btn-nav" routerLink="list" fragment="home">home</label>
+      <label class="btn-nav" routerLink="list"  fragment="irAqui">products</label>
+      <label class="btn-nav" routerLink="list"  fragment="contact">contact us</label>
+    </div>
+    <span>{{user?.user}}</span>
+    <div>
+
+      <div [ngClass]="{'carrito-log-out':user}"  class="carrito" *ngIf="cantidad>0 && cantidad<= 9; else cantidadCarrito">{{cantidad}}</div>
+
+      <ng-template #cantidadCarrito >
+        <div class="carrito" *ngIf="cantidad>9">9+</div>
+      </ng-template>
+
+
+      <div class="nav-right material-symbols-outlined notify" routerLink="shoppingCart" id="cartShopping">shopping_cart</div>
+
+    </div>
+    <label class="material-symbols-outlined" id="menu" for="menu-btn">
+      menu
+      </label>
+      <div class="btn-menu">
+        <label for=""></label>
+        <label for=""></label>
+        <label for=""></label>
+      </div>
+    <span *ngIf="user" id="log-out" class="material-symbols-outlined" (click)="logOut()">
+      logout
+    </span>
+
+    <input type="checkbox" id="menu-btn">
+
+    <div class="container-menu" >
+      <div class="cont-menu">
+        <nav>
+          <a routerLink="home" fragment="home" >Home</a>
+          <a routerLink="home"  fragment="irAqui" >Products</a>
+          <a routerLink="home"  fragment="contact" >Contact Us</a>
+          <a routerLink="shoppingCart"  >Shopping Car</a>
+
+        </nav>
+        <label for="menu-btn" class="material-symbols-outlined">
+          close
+          </label>
+      </div>
+    </div>
+  </div>
+
+
+</div>

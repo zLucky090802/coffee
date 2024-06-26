@@ -1,0 +1,13 @@
+*{
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+  width: 7px;
+}
+
+
+body::-webkit-scrollbar-thumb{
+  background: #C29C6B;
+}

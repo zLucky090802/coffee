@@ -1,0 +1,262 @@
+*{
+  justify-content: center;
+  margin: auto;
+}
+
+.see-more{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; 
+}
+
+.see-more button{
+  background-color: #C29C6B;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-transform: capitalize;
+  width: 200px;
+  cursor: pointer;
+}
+.see-more button:hover{
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+.card-container {
+  width: 700px;
+  height: 500px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card-container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card .img-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
+}
+
+.card .img-content img {
+  width: 100%;
+  height: 100%;
+  fill: #e8e8e8;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  color: #e8e8e8;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content .heading {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.card:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .img-content {
+  scale: 2.5;
+  rotate: 30deg;
+  filter: blur(7px);
+}
+
+.card:hover .img-content svg {
+  fill: transparent;
+}
+
+
+.title{
+  margin-top: 100px;
+  margin-bottom: 40px;
+  display: flex;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: 'Roboto';
+  text-align: center;
+
+}
+
+.title span{
+  color: #C29C6B;
+  padding: 10px;
+}
+
+/* @-webkit-keyframes cards {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+@keyframes cards {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+} */
+@media (max-width:768px) {
+ 
+  .title {
+    font-size: 1rem;
+  }
+
+ .card-comment{
+  margin-right: 20px;
+  margin-left: 20px;
+ }
+ 
+
+  
+}
+
+.card-comment {
+  background-color: rgba(243, 244, 246, 1);
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.24);
+  
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  
+}
+
+.header .image img{
+  height: 4rem;
+  width: 4rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  background-color: royalblue;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  grid-gap: 0.125rem;
+  gap: 0.125rem;
+  color: rgba(34, 197, 94, 1);
+}
+
+.stars svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.name {
+  margin-top: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, 1);
+}
+
+.message {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin-top: 1rem;
+  color: rgba(107, 114, 128, 1);
+}
+
+.cards-comment{
+  display: flex;
+  
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  gap: 30px;
+  width: 80%;
+
+ 
+}
+#irAqui{
+  color: black;
+}
+
+.cards-product{
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+
+
+ 
+  margin-bottom: 20px;
+
+  width: 100%;
+  gap: 15px;
+ 
+}
+
+
+
+

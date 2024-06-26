@@ -1,0 +1,33 @@
+
+<div class="">
+  
+  <form [formGroup]="register" (ngSubmit)="registerUSer()" class="form">
+    <div class="header">
+  
+      <h1>Create account</h1>
+      <p>to continue your purchase</p>
+    </div>
+
+    <input type="text" placeholder="Name" formControlName="name">
+
+    <input type="text" placeholder="email" formControlName="email">
+    <div *ngIf="register.get('email')!.errors && register.get('email')!.dirty" class="error-container">
+      <div *ngIf="register.get('email')!.hasError('required')" class="error">Email is required.</div>
+      <div *ngIf="register.get('email')!.hasError('invalidEmail')" class="error">The email format is invalid.</div>
+      
+    </div>
+
+    <input type="password" placeholder="password" formControlName="password">
+
+    <div *ngIf="register.get('password')!.errors && register.get('password')!.dirty || register.get('password')!.errors && register.get('password')!.touched " class="error-container">
+      <div *ngIf="register.get('password')!.hasError('required')" class="error">password is required.</div>
+      <div *ngIf="register.get('password')!.hasError('invalidPasswordFormat') && (register.get('password')!.touched && isSubmitted)" class="error">The password must contain at least one uppercase letter, one lowercase letter, and one special character.</div>
+      
+    </div>
+    <div class="footer">
+  
+      <p>do you have account??<a routerLink="auth/login">Sign in!</a></p>
+    </div>
+    <button type="submit" class="button" >Create</button>
+  </form>
+</div>

@@ -1,0 +1,73 @@
+<!-- <div class="card" *ngIf="coffeeProduct.image">
+
+  
+
+  <img [src]="[coffeeProduct.image]" class="img" />
+
+
+
+
+  <div class="footer-card">
+    <h3 >{{coffeeProduct.title}}</h3>
+    <div class="precio">
+      <p>{{valor | currency}}</p>
+      <p id="lastprice">{{'1.50' | currency}}</p>
+    </div>
+    <button (click)="open(coffeeProduct)">add to car</button>
+
+  </div>
+
+
+
+</div> -->
+<div class="card" *ngIf="coffeeProduct != null; else CoffeeBeans">
+  <div class="card_form">
+    <img [src]="coffeeProduct.image" alt="" />
+    <span>{{ coffeeProduct.title }}</span>
+  </div>
+  <div class="card_data">
+    <div style="display: flex" class="data">
+      <div class="text">
+        <label class="text_m">{{ coffeeProduct.title }}</label>
+        <div class="cube text_s">
+          <label class="side front"></label>
+          <label class="side top">{{ valor | currency }}</label>
+        </div>
+      </div>
+    </div>
+
+    <span
+      class="material-symbols-outlined Acceder a la lista (Temas)"
+      (click)="open(coffeeProduct)"
+    >
+      add_shopping_cart
+    </span>
+  </div>
+</div>
+
+<ng-template #CoffeeBeans>
+  <div class="card">
+    <div class="card_form">
+      <img [src]="coffeeBeans.image_url" alt="" />
+      <span>{{ coffeeBeans.name }}</span>
+    </div>
+    <div class="card_data">
+      <div style="display: flex" class="data">
+        <div class="text">
+          <label class="text_m">{{ coffeeBeans.name }}</label>
+          <div class="cube text_s">
+            <label class="side front"></label>
+            <label class="side top">{{ coffeeBeans.price | currency }}</label>
+          </div>
+        </div>
+      </div>
+
+      <span
+        class="material-symbols-outlined Acceder a la lista (Temas)"
+        (click)="open(coffeeBeans)"
+      >
+        add_shopping_cart
+      </span>
+    </div>
+  </div>
+</ng-template>

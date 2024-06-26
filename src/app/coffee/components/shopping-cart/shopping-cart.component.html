@@ -1,0 +1,168 @@
+<!-- <div class="cart" *ngIf="coffeeFilter.length > 0; else Empty">
+  <div class="productos">
+    <div class="product" *ngFor="let producto of coffeeFilter; let i = index">
+      <img class="imagen" [src]="[producto.image]" />
+      <div class="texto">
+        <div class="encabezado">
+          <div class="titulo">{{ producto.title }}</div>
+          <div class="precio">{{ producto.price | currency }}</div>
+        </div>
+        <div class="ingredients">{{ producto.ingredients }}</div>
+
+        <div class="footer">
+          <div class="cantidad">
+            <button
+              (click)="decrementarCarrito(i)"
+              [disabled]="btnEnable"
+              [ngStyle]="{ btn_disable: btnEnable === false }"
+            >
+              -
+            </button>
+            {{ producto.cantidad }}
+            <button (click)="aumentarCarrito(i)">+</button>
+          </div>
+          <span class="material-symbols-outlined eliminar" (click)="delete(i)">
+            delete
+          </span>
+        </div>
+      </div>
+    </div>
+    <ng-template #beans class="product"*ngFor="let producto of coffeeFilterBean; let i = index">
+      <img class="imagen" [src]="[producto.image_url]" />
+      <div class="texto">
+        <div class="encabezado">
+          <div class="titulo">{{ producto.name }}</div>
+          <div class="precio">{{ producto.price | currency }}</div>
+        </div>
+        <div class="ingredients">{{ producto.flavor_profile }}</div>
+
+        <div class="footer">
+          <div class="cantidad">
+            <button
+              (click)="decrementarCarrito(i)"
+              [disabled]="btnEnable"
+              [ngStyle]="{ btn_disable: btnEnable === false }"
+            >
+              -
+            </button>
+            {{ producto.cantidad }}
+            <button (click)="aumentarCarrito(i)">+</button>
+          </div>
+          <span class="material-symbols-outlined eliminar" (click)="delete(i)">
+            delete
+          </span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="total">
+    <h2>Resumen</h2>
+    <div class="resumen">
+      <div class="costos">
+        <p>subtotal</p>
+        <p>Gastos de envio y gestión estimados</p>
+
+        <p id="total">Total</p>
+      </div>
+
+      <div class="precios">
+        <p>{{ subtotal | currency }}</p>
+        <p>Gratis</p>
+
+        <p id="total">{{ subtotal | currency }}</p>
+      </div>
+    </div>
+    <button class="boton-pagar" routerLink="/payment/" (click)="reset()">
+      Ir a pagar
+    </button>
+  </div>
+</div>
+
+<ng-template #Empty>
+  <div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="" />
+
+    <h3>¡Empieza un carrito de compras!</h3>
+    <p>Suma productos y consigue envío gratis.</p>
+    <button class="button" routerLink="list" (click)="reset()">
+      Descubrir Productos
+    </button>
+  </div>
+</ng-template> -->
+<div class="cart" *ngIf="localExist ; else Empty">
+  <div class="productos">
+    <!-- Mostrar productos CoffeeProduct -->
+    <div class="product" *ngFor="let producto of coffeeFilter; let i = index">
+      <img class="imagen" [src]="producto.image" />
+      <div class="texto">
+        <div class="encabezado">
+          <div class="titulo">{{ producto.title }}</div>
+          <div class="precio">{{ producto.price | currency }}</div>
+        </div>
+        <div class="ingredients">{{ producto.ingredients }}</div>
+
+        <div class="footer">
+          <div class="cantidad">
+            <button (click)="decrementarCarrito(i)" [disabled]="btnEnable" [ngStyle]="{ 'btn_disable': btnEnable === false }">-</button>
+            {{ producto.cantidad }}
+            <button (click)="aumentarCarrito(i)">+</button>
+          </div>
+          <span class="material-symbols-outlined eliminar" (click)="delete(i,'product')">delete</span>
+         
+        </div>
+      </div>
+    </div>
+
+    <!-- Mostrar productos CoffeeBeans -->
+    <ng-container *ngFor="let producto of coffeeFilterBean; let i = index">
+      <div class="product">
+        <img class="imagen" [src]="producto.image_url" />
+        <div class="texto">
+          <div class="encabezado">
+            <div class="titulo">{{ producto.name }}</div>
+            <div class="precio">{{ producto.price | currency }}</div>
+          </div>
+          <div class="ingredients">{{ producto.flavor_profile }}</div>
+
+          <div class="footer">
+            <div class="cantidad">
+              <button (click)="decrementarCarrito(i)" [disabled]="btnEnable" [ngStyle]="{ 'btn_disable': btnEnable === false }">-</button>
+              {{ producto.cantidad }}
+              <button (click)="aumentarCarrito(i)">+</button>
+            </div>
+            <span class="material-symbols-outlined eliminar" (click)="delete(i,'bean')">delete</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Mostrar resumen y botón de pago -->
+  <div class="total">
+    <h2>Resumen</h2>
+    <div class="resumen">
+      <div class="costos">
+        <p>subtotal</p>
+        <p>Gastos de envío y gestión estimados</p>
+        <p id="total">Total</p>
+      </div>
+      <div class="precios">
+        <p>{{ subtotal | currency }}</p>
+        <p>Gratis</p>
+        <p id="total">{{ subtotal | currency }}</p>
+      </div>
+    </div>
+    <button class="boton-pagar" routerLink="/payment/" (click)="reset()">Ir a pagar</button>
+  </div>
+</div>
+
+<!-- Mostrar mensaje si el carrito está vacío -->
+<ng-template #Empty >
+  <div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="" />
+    <h3>¡Empieza un carrito de compras!</h3>
+    <p>Suma productos y consigue envío gratis.</p>
+    <button class="button" routerLink="list" (click)="reset()">Descubrir Productos</button>
+  </div>
+</ng-template>

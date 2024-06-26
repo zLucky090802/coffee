@@ -1,0 +1,58 @@
+.footer {
+  background-color: black;
+  text-align: center;
+  color: white;
+  border-top: 1px solid #C29C6B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto';
+  padding-top: 20px;
+  height: 60vh;
+
+}
+
+
+.footer h1 {
+  text-transform: capitalize;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 20px;
+  margin: 20px;
+}
+
+
+.footer p{
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.share {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 1.5rem;
+  color: white;
+}
+
+.footer .share a {
+  padding: 1rem 0;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #fff;
+  border: #C29C6B;
+  margin: 20px;
+}
+
+.footer .share a:hover {
+  color: #C29C6B;
+  cursor: pointer;
+}
+
+.footer .description {
+  color: #fff;
+  text-align: center;
+}
